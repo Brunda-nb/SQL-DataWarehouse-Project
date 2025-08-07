@@ -81,9 +81,9 @@ This document outlines the naming conventions used for schemas, tables, views, c
 
 ---
 
-🛠️ **Maintained by:** [Your Name]  
+🛠️ **Maintained by:** Brunda N 
 🌐 **Portfolio:** _coming soon_  
-🔗 **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
+🔗 **LinkedIn:** www.linkedin.com/in/brundanb  
 🧠 *"Naming conventions are the first layer of communication between humans and data systems."*
 
 
