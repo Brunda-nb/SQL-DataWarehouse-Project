@@ -41,6 +41,11 @@ For practical learning and portfolio showcasing, I adapted the entire project to
 - **Solution:** Encapsulated the data transformation and table creation logic inside reusable Python functions, which are executed externally in Google Colab or other Python environments.
 - **Example:** Created a Python function to copy data from raw tables to bronze layer tables, making the process modular and repeatable.
 
+### 7. Python Exception Handling vs. Other Languages
+- **Issue:** Coming from SQL Server or other programming languages, I initially expected `catch` blocks for error handling.
+- **Impact:** Using `catch` in Python causes syntax errors since Python uses `try`...`except`.
+- **Solution:** Learned that Python uses `except` blocks for catching exceptions, and adapted error handling accordingly in all scripts.
+- This reinforced the importance of language-specific syntax knowledge when migrating projects.
 ---
 
 ## Learnings & Takeaways
