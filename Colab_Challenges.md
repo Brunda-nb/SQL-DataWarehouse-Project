@@ -1,11 +1,12 @@
 # Challenges & Learnings: Migrating a SQL Server Data Warehouse Project to Google Colab with SQLite
 
 ## Background
-This project was originally designed using SQL Server features like `BULK INSERT` to load CSV files and create layered tables (bronze, silver, gold) in a data warehouse architecture.
+This project implements a layered data warehouse architecture (bronze, silver, gold) designed to handle data ingestion, transformation, and business-ready reporting.
 
-For practicing and showcasing on my portfolio, I migrated the project to use **SQLite in Google Colab**, which is lightweight and free but has significant differences compared to SQL Server.
+Originally developed using SQL Server, the project leveraged various SQL Server-specific features and commands to efficiently manage and process large datasets.
 
----
+For practical learning and portfolio showcasing, I adapted the entire project to run on **SQLite within Google Colab** — a lightweight, cloud-based environment with limited native SQL features but powerful integration with Python. This migration required rethinking data ingestion, transformation, and automation techniques to fit within SQLite’s capabilities and Colab’s environment.
+
 
 ## Challenges Faced
 
@@ -34,6 +35,12 @@ For practicing and showcasing on my portfolio, I migrated the project to use **S
 - **Impact:** Mismatched columns cause errors.
 - **Solution:** Ensured consistent column naming or explicitly mapped columns during insertion or transformation.
 
+### 6. Lack of Stored Procedures in SQLite
+- **Issue:** Unlike SQL Server, SQLite does not support stored procedures.
+- **Impact:** Could not encapsulate complex SQL logic directly inside the database.
+- **Solution:** Encapsulated the data transformation and table creation logic inside reusable Python functions, which are executed externally in Google Colab or other Python environments.
+- **Example:** Created a Python function to copy data from raw tables to bronze layer tables, making the process modular and repeatable.
+
 ---
 
 ## Learnings & Takeaways
@@ -54,5 +61,3 @@ If you have questions or want to collaborate, please reach out!
 ---
 
 *Brunda N*  
-*Data Analyst & Aspiring Data Engineer*
-
