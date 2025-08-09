@@ -17,7 +17,7 @@ This diagram visually represents how data flows through the project from its sou
 
 
 You can also explore the interactive version here:  
-[View Interactive Data Lineage Diagram]([https://your-drawio-link.com](https://drive.google.com/file/d/164JxmuKx05I8slIy8R97kyQ83gsv29EY/view?usp=sharing)) <!-- Replace with your draw.io link -->
+[View Interactive Data Lineage Diagram](https://drive.google.com/file/d/164JxmuKx05I8slIy8R97kyQ83gsv29EY/view?usp=sharing) <!-- Replace with your draw.io link -->
 
 ---
 ## 🚀 Project Requirements
