@@ -4,7 +4,22 @@ Welcome to the Data Warehouse and Analytics Project repository! 🚀
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
 ---
+## Data Lineage
 
+This diagram visually represents how data flows through the project from its source to the final output.
+
+- It helps to understand the key steps where data is collected, transformed, and used.  
+- By seeing this flow, anyone can quickly grasp how data moves and changes in the system.  
+- It supports transparency and trust in the data and insights generated.  
+- This is especially useful for stakeholders who want a high-level overview without diving into technical details.
+
+<img width="934" height="561" alt="image" src="https://github.com/user-attachments/assets/f2505334-0989-4b29-a720-9675ca286511" />
+
+
+You can also explore the interactive version here:  
+[View Interactive Data Lineage Diagram]([https://your-drawio-link.com](https://drive.google.com/file/d/164JxmuKx05I8slIy8R97kyQ83gsv29EY/view?usp=sharing)) <!-- Replace with your draw.io link -->
+
+---
 ## 🚀 Project Requirements
 ### Building the Data Warehouse (Data Engineering)
 ### Objective
