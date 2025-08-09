@@ -7,6 +7,24 @@ Originally developed using SQL Server, the project leveraged various SQL Server-
 
 For practical learning and portfolio showcasing, I adapted the entire project to run on **SQLite within Google Colab** — a lightweight, cloud-based environment with limited native SQL features but powerful integration with Python. This migration required rethinking data ingestion, transformation, and automation techniques to fit within SQLite’s capabilities and Colab’s environment.
 
+---
+## Python with SQLITE3 over %%SQL
+###  Managing SQL Workflows with Python
+- I use Python’s built-in sqlite3 library to connect to the SQLite database.
+- I execute raw SQL statements using cursor.execute().
+- To manage multiple related SQL commands (like dropping tables and recreating them), I write Python loops that iterate over table names and run SQL dynamically.
+- Since SQLite lacks procedural features like stored procedures and try-catch blocks, I leveraged Python’s `sqlite3` library to execute SQL commands.
+- Used Python loops to dynamically run SQL statements for multiple tables.
+- Wrapped SQL executions in `try-except` blocks to handle errors gracefully and ensure the ETL process continues without interruptions.
+- Integrated Python’s `time` module to measure execution duration and monitor ETL performance.
+- This approach enabled flexible, robust, and automated data workflows combining Python’s control structures with SQL data operations.
+- It also facilitated better logging and debugging during development and presentation.
+- For robustness, I wrap SQL execution in Python try-except blocks to catch and log errors without crashing the process.
+- I also measure performance using Python’s time module to track how long each step takes.
+This approach combines the flexibility of Python programming with the power of SQL for data manipulation.
+
+In notebook environments like Google Colab, this lets me blend SQL and Python seamlessly for data engineering workflows.
+---
 
 ## Challenges Faced
 
