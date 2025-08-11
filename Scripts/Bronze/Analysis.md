@@ -1,3 +1,17 @@
+# 📋 Source System Analysis 
+
+## 🛠 Why Do We Do Source System Analysis?
+Before working with any data, it’s critical to understand the **source system** that generates and stores it.  
+Source system analysis helps to:
+- Ensure we collect **accurate, relevant, and reliable data** for our needs
+- Understand the **business processes** behind the data
+- Identify **limitations and risks** before integrating or transforming the data
+- Optimize **ETL/ELT pipelines** by knowing refresh rates, storage, and formats
+- Align the **data’s purpose** with project KPIs and analytics goals
+- Avoid **costly rework** caused by missing or misunderstood information
+
+This checklist can be used as a reference during **data discovery**, **ETL design**, or **system onboarding**.
+
 # 📋 Source System Analysis Checklist
 
 ## 1. Business Context & Ownership
