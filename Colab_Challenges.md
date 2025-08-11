@@ -37,6 +37,8 @@ In notebook environments like Google Colab, this lets me blend SQL and Python se
 - **Issue:** SQL Server syntax such as `WITH (...)` clauses in bulk insert is unavailable.
 - **Impact:** Had to rethink data loading and transformation steps.
 - **Solution:** Moved CSV parsing logic (like skipping headers, field delimiters) to Pandas which handles these options natively.
+- **SQL Syntax Differences Across Databases**: While SQL Server supports `SELECT TOP(n)` for limiting rows, SQLite uses the `LIMIT n` clause instead. This difference can cause query errors when switching between SQL engines.
+
 
 ### 3. File System and Path Differences
 - **Issue:** SQL Server expects file paths on a server or local machine; Colab runs on a cloud VM.
