@@ -67,10 +67,10 @@ The following changes are made during the checklist.
 
 ## 1. Transformation: Standardizing cst_id column
 - Source Table: <table_name> (from Bronze layer)
-- Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
+- [x] Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
 - Reason: cst_id had mixed data types and NULL values; standardization supports accurate joins and aggregations.
 
 ## 2. Dulicate primmary keys.
-- In the table we found some duplicate & primary key is being null cases.
+- [x] In the table we found some duplicate & primary key is being null cases.
 - We selected the records with latest entry based on their create date.   
 ---
