@@ -5,8 +5,8 @@ This checklist ensures that all raw data undergoes quality validation before tra
 ---
 
 ## 1. Completeness Checks
-- [ ] Row count matches between source and staging tables.
-- [ ] Primary key columns are unique.
+- [x] Row count matches between source and staging tables.
+- [x] Primary key columns are unique.
 - [ ] Mandatory fields (`customer_id`, `order_date`, etc.) are not null.
 - [ ] All expected files/data partitions are present.
 - [ ] Timestamp coverage is complete for the required period.
@@ -31,7 +31,7 @@ This checklist ensures that all raw data undergoes quality validation before tra
 ## 4. Consistency Checks
 - [ ] Referential integrity is maintained (FKs match PKs).
 - [ ] Units are consistent across all records (e.g., kg, USD).
-- [ ] Duplicate records checked and handled.
+- [x] Duplicate records checked and handled.
 - [ ] Mapped codes match mapping tables.
 
 ---
@@ -65,12 +65,25 @@ This checklist ensures that all raw data undergoes quality validation before tra
 ---
 The following changes are made during the checklist.
 
-## 1. Transformation: Standardizing cst_id column
-- Source Table: <table_name> (from Bronze layer)
-- [x] Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
+## 1.[x] Transformation: Standardizing cst_id column
+- Source Table: bronze_crm_cust_info (from Bronze layer)
+- Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
 - Reason: cst_id had mixed data types and NULL values; standardization supports accurate joins and aggregations.
 
-## 2. Dulicate primmary keys.
-- [x] In the table we found some duplicate & primary key is being null cases.
-- We selected the records with latest entry based on their create date.   
+## 2.[x] Dulicate primmary keys
+- Source Table : In the table bronze_crm_cust_info we found some duplicate & primary key is being null cases.
+- Action :I filtered the records with latest entry based on their create date. Basically used the row_number() to assign flag (1,2,_,_) for the multiple records
+- Expected : All the unique records should be having their flag marked as '1'.
+  
+## 3.[x] Check for unwanted spaces
+- Source Table : bronze_crm_cust_info
+- Action : Finding the records with spaces using the trim(). Selecting the records where value of column is not equal to value of its trimmed version.
+- Expected : Records with trailing or following spaces. 
+
+## 4.[x] Data standardization & Consistency (Columns with low cardinality)
+- Source Table : bronze_crm_cust_info (cst_gndr , cst_marital_status) 
+- Problem : Possible values of the column . Ex. In column cst_gndr we need only 2 values,'F','M'. Other than these two values should be treated.
+- Action : Selecting the distinct values of the columns. And assigning values to the abrivations using 'case'.
+- Expected : Values based on the cardinality of the column.
+- **Note** : Make sure to handle the null cases , spaces and also the uppercase/lowercase standarization while filtering . 
 ---
