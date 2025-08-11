@@ -63,3 +63,10 @@ This checklist ensures that all raw data undergoes quality validation before tra
 - Minor issues → flagged but transformation continues.
 
 ---
+The following changes are made during the checklist.
+
+## 1Transformation: Standardizing cst_id column
+- Source Table: <table_name> (from Bronze layer)
+- Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
+- Reason: cst_id had mixed data types and NULL values; standardization supports accurate joins and aggregations.
+---
