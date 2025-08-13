@@ -92,4 +92,8 @@ The following changes are made during the checklist.
 - Problem : Mismatch of format of the records
 - Action : Used replace function to repllace '-' with '_'
 
+X. Null & Negative Value Check in Numeric Columns
+- Source Table :bronze_crm_prd_info<prd_cost> , 
+- Problem : Numeric columns contained null values and/or negative values, which are invalid for business logic and can affect aggregations or calculations.
+- Action : Applied filters to identify rows with null values (IS NULL) and negative values (< 0) in numeric columns. Decided on corrective action such as replacing with default values, excluding from calculations, or flagging for review.
 ---
