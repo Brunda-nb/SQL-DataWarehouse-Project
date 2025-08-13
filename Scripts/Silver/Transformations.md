@@ -81,7 +81,7 @@ The following changes are made during the checklist.
 - Expected : Records with trailing or following spaces. 
 
 ## 4. Data standardization & Consistency (Columns with low cardinality)
-- Source Table : bronze_crm_cust_info (cst_gndr , cst_marital_status) 
+- Source Table : bronze_crm_cust_info (cst_gndr , cst_marital_status) , bronze_crm_prd_info (prd_line)
 - Problem : Possible values of the column . Ex. In column cst_gndr we need only 2 values,'F','M'. Other than these two values should be treated.
 - Action : Selecting the distinct values of the columns. And assigning values to the abrivations using 'case'.
 - Expected : Values based on the cardinality of the column.
@@ -92,8 +92,8 @@ The following changes are made during the checklist.
 - Problem : Mismatch of format of the records
 - Action : Used replace function to repllace '-' with '_'
 
-X. Null & Negative Value Check in Numeric Columns
+## 6. Null & Negative Value Check in Numeric Columns
 - Source Table :bronze_crm_prd_info<prd_cost> , 
 - Problem : Numeric columns contained null values and/or negative values, which are invalid for business logic and can affect aggregations or calculations.
-- Action : Applied filters to identify rows with null values (IS NULL) and negative values (< 0) in numeric columns. Decided on corrective action such as replacing with default values, excluding from calculations, or flagging for review.
+- Action : Applied filters to identify rows with null values (IS NULL) and negative values (< 0) in numeric columns. Decided on corrective action such as replacing with default values, excluding from calculations, or flagging for review. Used (ISNULL) to assign '0' to null values . 
 ---
