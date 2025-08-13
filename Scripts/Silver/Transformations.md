@@ -88,7 +88,7 @@ The following changes are made during the checklist.
 - **Note** : Make sure to handle the null cases , spaces and also the uppercase/lowercase standarization while filtering . 
 
 ## 5. Fixing format mismatch.
-- Source Table : bronze_crm_prd_info & bronze_erp_px_cat_g1v2 (cat_key)
+- Source Table : bronze_crm_prd_info & bronze_erp_px_cat_g1v2 (cat_id)
 - Problem : Mismatch of format of the records
 - Action : Used replace function to repllace '-' with '_'
 
