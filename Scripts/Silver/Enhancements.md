@@ -5,4 +5,4 @@
 - Added `source` column to identify the origin of the records.
 
 ## Derived Columns
-- Derived 'cat_key' column from 'prd_key'.
+- Derived 'cat_id' column from 'prd_key'.
