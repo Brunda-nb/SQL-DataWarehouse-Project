@@ -65,22 +65,22 @@ This checklist ensures that all raw data undergoes quality validation before tra
 ---
 The following changes are made during the checklist.
 
-## 1.[x] Transformation: Standardizing cst_id column
+## 1. Transformation: Standardizing cst_id column
 - Source Table: bronze_crm_cust_info (from Bronze layer)
 - Action: Casted cst_id to INTEGER to ensure consistent data type across all records.
 - Reason: cst_id had mixed data types and NULL values; standardization supports accurate joins and aggregations.
 
-## 2.[x] Dulicate primmary keys
+## 2. Dulicate primmary keys
 - Source Table : In the table bronze_crm_cust_info we found some duplicate & primary key is being null cases.
 - Action :I filtered the records with latest entry based on their create date. Basically used the row_number() to assign flag (1,2,_,_) for the multiple records
 - Expected : All the unique records should be having their flag marked as '1'.
   
-## 3.[x] Check for unwanted spaces
+## 3. Check for unwanted spaces
 - Source Table : bronze_crm_cust_info
 - Action : Finding the records with spaces using the trim(). Selecting the records where value of column is not equal to value of its trimmed version.
 - Expected : Records with trailing or following spaces. 
 
-## 4.[x] Data standardization & Consistency (Columns with low cardinality)
+## 4. Data standardization & Consistency (Columns with low cardinality)
 - Source Table : bronze_crm_cust_info (cst_gndr , cst_marital_status) 
 - Problem : Possible values of the column . Ex. In column cst_gndr we need only 2 values,'F','M'. Other than these two values should be treated.
 - Action : Selecting the distinct values of the columns. And assigning values to the abrivations using 'case'.
