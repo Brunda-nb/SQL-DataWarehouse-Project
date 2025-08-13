@@ -88,9 +88,9 @@ The following changes are made during the checklist.
 - **Note** : Make sure to handle the null cases , spaces and also the uppercase/lowercase standarization while filtering . 
 
 ## 5. Fixing format mismatch.
-- Source Table : bronze_crm_prd_info & bronze_erp_px_cat_g1v2 (cat_id)
-- Problem : Mismatch of format of the records
-- Action : Used replace function to repllace '-' with '_'
+- Source Table : bronze_crm_prd_info & bronze_erp_px_cat_g1v2 (cat_id) , bronze_erp_cust_az12 & bronze_crm_cut_info
+- Problem : Mismatch of format of the records . 
+- Action : Used replace function to repllace '-' with '_' in earlier case. While we used substring() to get the `CID` matching with `CST_KEY`. 
 
 ## 6. Null & Negative Value Check in Numeric Columns
 - Source Table :bronze_crm_prd_info<prd_cost> , 
