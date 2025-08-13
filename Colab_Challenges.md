@@ -71,6 +71,11 @@ In notebook environments like Google Colab, this lets me blend SQL and Python se
 - **Issue:** The original database in Google Colab had read-only permissions, preventing direct data insertion or updates.
 - **Impact:** Could not insert new records or modify existing data, blocking further data transformation steps.
 - **Solution:** Created a new database with writable permissions, renamed it, inserted the required data, and then set it as the main working database for the project.
+
+  ## Challenge: Adjusting Dates
+- **Issue:** While calculating `prd_end_dt` as 1 day before the next product start date using lead(prd_start_dt) - 1`, SQLite returned an incorrect value (e.g., only the year `2011`) due to its handling of date math on text fields.
+- **Cause:**  SQLite does not directly support arithmetic operations on datetime values like SQL Server or Postgres. When subtracting integers from text-formatted dates, it truncates or misinterprets the value.
+- **Solution Implemented:** Used `datetime()` function with a `-1 day` modifier on the result of `lead()` to correctly subtract one day and retain proper datetime formatting.
 ---
 
 ## Learnings & Takeaways
