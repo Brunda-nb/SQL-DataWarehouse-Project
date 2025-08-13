@@ -95,5 +95,14 @@ The following changes are made during the checklist.
 ## 6. Null & Negative Value Check in Numeric Columns
 - Source Table :bronze_crm_prd_info<prd_cost> , 
 - Problem : Numeric columns contained null values and/or negative values, which are invalid for business logic and can affect aggregations or calculations.
-- Action : Applied filters to identify rows with null values (IS NULL) and negative values (< 0) in numeric columns. Decided on corrective action such as replacing with default values, excluding from calculations, or flagging for review. Used (ISNULL) to assign '0' to null values . 
+- Action : Applied filters to identify rows with null values (IS NULL) and negative values (< 0) in numeric columns. Decided on corrective action such as replacing with default values, excluding from calculations, or flagging for review. Used (ISNULL) to assign '0' to null values .
+
+## 7. Transformation: Checking for Invalid Dates
+- Source Table : bronze_crm_prd_info<prd_start_dt,prd_end_dt>.
+- Validated `prd_start_dt` and `prd_end_dt` columns to ensure all values conform to the valid date range and are correctly formatted as `YYYY-MM-DD HH:MM:SS`. Flagged rows with null, malformed, or logically incorrect dates (e.g., month > 12, day > 31).
+- All date values should be valid and parsable into DATETIME format without errors.  
+- No invalid or out-of-range dates should exist in these columns.  
+- All stored dates should follow the `YYYY-MM-DD HH:MM:SS` standard.
+- Action : Used lead() to alot the continous date to avoid the overlapping. Concentrated only 1 product .
+  
 ---
