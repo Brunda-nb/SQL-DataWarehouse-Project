@@ -86,4 +86,10 @@ The following changes are made during the checklist.
 - Action : Selecting the distinct values of the columns. And assigning values to the abrivations using 'case'.
 - Expected : Values based on the cardinality of the column.
 - **Note** : Make sure to handle the null cases , spaces and also the uppercase/lowercase standarization while filtering . 
+
+## 5. Fixing format mismatch.
+- Source Table : bronze_crm_prd_info & bronze_erp_px_cat_g1v2 (cat_key)
+- Problem : Mismatch of format of the records
+- Action : Used replace function to repllace '-' with '_'
+
 ---
