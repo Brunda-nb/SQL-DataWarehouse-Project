@@ -66,6 +66,11 @@ In notebook environments like Google Colab, this lets me blend SQL and Python se
 - **Impact:** Using `catch` in Python causes syntax errors since Python uses `try`...`except`.
 - **Solution:** Learned that Python uses `except` blocks for catching exceptions, and adapted error handling accordingly in all scripts.
 - This reinforced the importance of language-specific syntax knowledge when migrating projects.
+
+### 8. Writable Rights Issue in SQLite Database
+- **Issue:** The original database in Google Colab had read-only permissions, preventing direct data insertion or updates.
+- **Impact:** Could not insert new records or modify existing data, blocking further data transformation steps.
+- **Solution:** Created a new database with writable permissions, renamed it, inserted the required data, and then set it as the main working database for the project.
 ---
 
 ## Learnings & Takeaways
